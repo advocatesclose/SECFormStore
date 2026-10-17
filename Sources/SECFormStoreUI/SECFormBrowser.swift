@@ -1,3 +1,11 @@
+//
+//  SECFormStore.swift
+//  SECFormStore
+//
+//  Created by Javaad Ali on 10/17/26.
+//  Copyright (c) 2026 Javaad Ali. All rights reserved.
+//
+
 import SwiftUI
 import SECFormStore
 
