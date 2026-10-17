@@ -513,3 +513,99 @@ public enum SECReport: Hashable, CaseIterable {
         }
     }
 }
+// MARK: - Form Groups
+public extension SECReport {
+    // Each case represents a whole group; its forms carry the individual report values.
+    enum FormGroups: CaseIterable, Hashable, Sendable {
+        case annualAndQuarterly
+        case materialEvents
+        case proxyAndShareholder
+        case corporateInsiders
+        case prospectuses
+        case exemptOfferings
+        case assetBackedSecurities
+        case tenderOffersAndGoingPrivate
+        case confidentialSubmissions
+        case businessDevelopment
+        case fundProspectuses
+        case publicOfferingsDomestic
+        case fundReports
+        case fundOperations
+        case publicOfferingsForeign
+        case institutionalHoldings
+        case brokerDealersAndMarket
+        case fundRegistrationAndHoldings
+        case beneficialOwnership
+        case secAdministrative
+
+        public var title: String {
+            switch self {
+            case .annualAndQuarterly: return "Annual & Quarterly Reports"
+            case .materialEvents: return "Material Events & Disclosures"
+            case .proxyAndShareholder: return "Proxy & Shareholder Voting"
+            case .corporateInsiders: return "Corporate Insiders (Section 16)"
+            case .prospectuses: return "Prospectuses (424 Series)"
+            case .exemptOfferings: return "Exempt Offerings"
+            case .assetBackedSecurities: return "Asset-Backed Securities"
+            case .tenderOffersAndGoingPrivate: return "Tender Offers & Going Private"
+            case .confidentialSubmissions: return "Confidential Submissions"
+            case .businessDevelopment: return "Business Development Cos"
+            case .fundProspectuses: return "Fund Prospectuses & Supplements"
+            case .publicOfferingsDomestic: return "Public Offerings — Domestic"
+            case .fundReports: return "Fund Reports"
+            case .fundOperations: return "Fund Operations"
+            case .publicOfferingsForeign: return "Public Offerings — Foreign"
+            case .institutionalHoldings: return "Institutional Holdings"
+            case .brokerDealersAndMarket: return "Broker-Dealers & Market Infrastructure"
+            case .fundRegistrationAndHoldings: return "Fund Registration & Holdings"
+            case .beneficialOwnership: return "Beneficial Ownership (5%+)"
+            case .secAdministrative: return "SEC Administrative"
+            }
+        }
+
+        public var forms: [SECReport] {
+            switch self {
+            case .annualAndQuarterly:
+                return SECReport.AnnualAndQuarterly.allCases.map(SECReport.annualAndQuarterly)
+            case .materialEvents:
+                return SECReport.MaterialEvents.allCases.map(SECReport.materialEvents)
+            case .proxyAndShareholder:
+                return SECReport.ProxyAndShareholder.allCases.map(SECReport.proxyAndShareholder)
+            case .corporateInsiders:
+                return SECReport.CorporateInsiders.allCases.map(SECReport.corporateInsiders)
+            case .prospectuses:
+                return SECReport.Prospectuses.allCases.map(SECReport.prospectuses)
+            case .exemptOfferings:
+                return SECReport.ExemptOfferings.allCases.map(SECReport.exemptOfferings)
+            case .assetBackedSecurities:
+                return SECReport.AssetBackedSecurities.allCases.map(SECReport.assetBackedSecurities)
+            case .tenderOffersAndGoingPrivate:
+                return SECReport.TenderOffersAndGoingPrivate.allCases.map(SECReport.tenderOffersAndGoingPrivate)
+            case .confidentialSubmissions:
+                return SECReport.ConfidentialSubmissions.allCases.map(SECReport.confidentialSubmissions)
+            case .businessDevelopment:
+                return SECReport.BusinessDevelopment.allCases.map(SECReport.businessDevelopment)
+            case .fundProspectuses:
+                return SECReport.FundProspectuses.allCases.map(SECReport.fundProspectuses)
+            case .publicOfferingsDomestic:
+                return SECReport.PublicOfferingsDomestic.allCases.map(SECReport.publicOfferingsDomestic)
+            case .fundReports:
+                return SECReport.FundReports.allCases.map(SECReport.fundReports)
+            case .fundOperations:
+                return SECReport.FundOperations.allCases.map(SECReport.fundOperations)
+            case .publicOfferingsForeign:
+                return SECReport.PublicOfferingsForeign.allCases.map(SECReport.publicOfferingsForeign)
+            case .institutionalHoldings:
+                return SECReport.InstitutionalHoldings.allCases.map(SECReport.institutionalHoldings)
+            case .brokerDealersAndMarket:
+                return SECReport.BrokerDealersAndMarket.allCases.map(SECReport.brokerDealersAndMarket)
+            case .fundRegistrationAndHoldings:
+                return SECReport.FundRegistrationAndHoldings.allCases.map(SECReport.fundRegistrationAndHoldings)
+            case .beneficialOwnership:
+                return SECReport.BeneficialOwnership.allCases.map(SECReport.beneficialOwnership)
+            case .secAdministrative:
+                return SECReport.SECAdministrative.allCases.map(SECReport.secAdministrative)
+            }
+        }
+    }
+}
