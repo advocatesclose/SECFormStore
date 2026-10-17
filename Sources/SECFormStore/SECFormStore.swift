@@ -8,6 +8,7 @@
 
 import Foundation
 
+// MARK: - Form Types
 // MARK: - Master SEC Report Enum
 public enum SECReport: Hashable, CaseIterable {
     
