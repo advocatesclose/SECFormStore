@@ -9,75 +9,75 @@
 import Foundation
 
 // MARK: - Master SEC Report Enum
-enum SECReport: Hashable, CaseIterable {
+public enum SECReport: Hashable, CaseIterable {
     
     // MARK: - 1. Nested Grouping Enums
     
     // Operating Companies
-    enum AnnualAndQuarterly: Hashable, CaseIterable {
+    public enum AnnualAndQuarterly: Hashable, CaseIterable {
         case annualReports, quarterlyReports, foreignAnnual, canadianAnnual
     }
-    enum MaterialEvents: Hashable, CaseIterable {
+    public enum MaterialEvents: Hashable, CaseIterable {
         case currentReports, foreignCurrent, regAEvents, earningsResults, pressReleasesAndRegFD, materialContracts, insiderTradePolicies
     }
-    enum ProxyAndShareholder: Hashable, CaseIterable {
+    public enum ProxyAndShareholder: Hashable, CaseIterable {
         case proxyStatements, preliminary, additional, nonManagementSoliciting, mergerProxyStatements, definitiveInfo, preliminaryInfo, annualReportToSH
     }
-    enum CorporateInsiders: Hashable, CaseIterable {
+    public enum CorporateInsiders: Hashable, CaseIterable {
         case initialOwnership, insiderTrading, annualDeferred, restrictedSales
     }
     
     // Capital Raising & Specialty
-    enum Prospectuses: Hashable, CaseIterable {
+    public enum Prospectuses: Hashable, CaseIterable {
         case structuredProducts, finalIPO, freeWriting, prospectusSupplements, shelfSupplements, maCommunications
     }
-    enum ExemptOfferings: Hashable, CaseIterable {
+    public enum ExemptOfferings: Hashable, CaseIterable {
         case regDPrivate, regAAnnual, crowdfunding, regAOfferings, regASemiAnnual, fundingPortals
     }
-    enum AssetBackedSecurities: Hashable, CaseIterable {
+    public enum AssetBackedSecurities: Hashable, CaseIterable {
         case standardABSRegistration, distributionReports, repsAndWarranties, shelfABSRegistration, assetLevelData
     }
-    enum TenderOffersAndGoingPrivate: Hashable, CaseIterable {
+    public enum TenderOffersAndGoingPrivate: Hashable, CaseIterable {
         case preCommencementComms, issuerSelfTender, goingPrivate, thirdParty, targetResponse, crossBorderTransactions
     }
-    enum ConfidentialSubmissions: Hashable, CaseIterable {
+    public enum ConfidentialSubmissions: Hashable, CaseIterable {
         case draftRegistrations, draftRegA
     }
     
     // Funds & Public Offerings
-    enum BusinessDevelopment: Hashable, CaseIterable {
+    public enum BusinessDevelopment: Hashable, CaseIterable {
         case bdcElection, bdcAutoShelf, bdcRegistration
     }
-    enum FundProspectuses: Hashable, CaseIterable {
+    public enum FundProspectuses: Hashable, CaseIterable {
         case fundProspectus, variableInitialSummary, postEffectiveDelayed, summaryProspectus, variableUpdatingSummary, postEffectiveImmediate
     }
-    enum PublicOfferingsDomestic: Hashable, CaseIterable {
+    public enum PublicOfferingsDomestic: Hashable, CaseIterable {
         case iposAndRegistration, businessCombinationsDomestic, reits, shelfRegistrations, employeePlans
     }
-    enum FundReports: Hashable, CaseIterable {
+    public enum FundReports: Hashable, CaseIterable {
         case annualCensus, semiAnnualShareholderReports, proxyVoting, shareholderReports, moneyMarketEvents, variableProducts
     }
-    enum FundOperations: Hashable, CaseIterable {
+    public enum FundOperations: Hashable, CaseIterable {
         case securitiesSold, deregistration, repurchaseOffers, exemptiveApps
     }
-    enum PublicOfferingsForeign: Hashable, CaseIterable {
+    public enum PublicOfferingsForeign: Hashable, CaseIterable {
         case foreignRegistration, foreignCombinations, rightsOffering, mjdsRegistration, foreignShelf, adrs, businessCombinationForeign, mjdsExchangeTender
     }
     
     // Holdings & Markets
-    enum InstitutionalHoldings: Hashable, CaseIterable {
+    public enum InstitutionalHoldings: Hashable, CaseIterable {
         case portfolioHoldings, coverPages
     }
-    enum BrokerDealersAndMarket: Hashable, CaseIterable {
+    public enum BrokerDealersAndMarket: Hashable, CaseIterable {
         case bdAnnualReports, transferAgentRpt, altTradingSystems, swapDealers, transferAgentReg, municipalAdvisors, ratingAgencies
     }
-    enum FundRegistrationAndHoldings: Hashable, CaseIterable {
+    public enum FundRegistrationAndHoldings: Hashable, CaseIterable {
         case mutualFundsAndETFs, fundPortfolioHoldings, separateAccount, variableLifeInsurance, closedEndAndBDCs, moneyMarketFundPortfolioReports, variableAnnuity, fundMergers
     }
-    enum BeneficialOwnership: Hashable, CaseIterable {
+    public enum BeneficialOwnership: Hashable, CaseIterable {
         case activeActivist, passiveInstitutional
     }
-    enum SECAdministrative: Hashable, CaseIterable {
+    public enum SECAdministrative: Hashable, CaseIterable {
         case commentLetters, confidentialTreatmentOrders, effectiveness
     }
     
@@ -109,7 +109,7 @@ enum SECReport: Hashable, CaseIterable {
     
     // MARK: - 3. CaseIterable Synthesis
     
-    static var allCases: [SECReport] {
+    public static var allCases: [SECReport] {
         return AnnualAndQuarterly.allCases.map { .annualAndQuarterly($0) } +
                MaterialEvents.allCases.map { .materialEvents($0) } +
                ProxyAndShareholder.allCases.map { .proxyAndShareholder($0) } +
@@ -137,7 +137,7 @@ enum SECReport: Hashable, CaseIterable {
     
     // MARK: - 4. Properties
     
-    var title: String {
+    public var title: String {
         switch self {
         case .annualAndQuarterly(let r):
             switch r {
@@ -304,7 +304,7 @@ enum SECReport: Hashable, CaseIterable {
         }
     }
     
-    var formCode: String {
+    public var formCode: String {
         switch self {
         case .annualAndQuarterly(let r):
             switch r {
@@ -471,7 +471,7 @@ enum SECReport: Hashable, CaseIterable {
         }
     }
     
-    var subCategoryTitle: String {
+    public var subCategoryTitle: String {
         switch self {
         case .annualAndQuarterly: return "Annual & Quarterly Reports"
         case .materialEvents: return "Material Events & Disclosures"
@@ -499,7 +499,7 @@ enum SECReport: Hashable, CaseIterable {
         }
     }
     
-    var mainCategoryTitle: String {
+    public var mainCategoryTitle: String {
         switch self {
         case .annualAndQuarterly, .materialEvents, .proxyAndShareholder, .corporateInsiders:
             return "Operating Companies"
