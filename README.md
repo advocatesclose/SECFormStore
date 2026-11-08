@@ -1,9 +1,8 @@
-# **SECFormStore**
+# SECFormStore
 
-**A zero-dependency, type-safe Swift taxonomy and metadata store for SEC EDGAR filings, exhibits, and administrative disclosures.**  
-SECFormStore replaces fragile, stringly-typed SEC form identifiers with a compiler-verified, hierarchical Swift enumeration (SECReport). Built purely on Foundation, it models **106 distinct SEC filing types and exhibit codes** organized across **4 primary market pillars** and **20 functional subcategories**—making it ideal for EDGAR data pipelines, securities research platforms, and native macOS/iOS financial interfaces.
+The package has no dependencies.
 
-## **Key Features**
+## Features
 
 ### Dot Syntax
 Dot syntax is supported.
